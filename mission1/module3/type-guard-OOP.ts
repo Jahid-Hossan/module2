@@ -12,22 +12,22 @@
         }
     }
 
-    class Dog {
+    class Dog extends Animal {
         constructor(
             name: string,
             species: string
-        ) { }
+        ) { super(name, species) }
 
         makeBark() {
             console.log(`I am barking`);
         }
     }
 
-    class Cat {
+    class Cat extends Animal {
         constructor(
             name: string,
             species: string
-        ) { }
+        ) { super(name, species) }
 
         makeMeaw() {
             console.log(`I am meawing`);
