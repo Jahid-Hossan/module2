@@ -17,6 +17,28 @@
     // typein method
 
 
+    type NormalUser = {
+        name: string
+    }
+
+    type AdminUser = {
+        name: string,
+        role: 'admin'
+    }
+
+
+    const checkUser = (user: NormalUser | AdminUser) => {
+        if ('role' in user) {
+            console.log(`I am ${user.name} and I'm ${user.role} user`);
+        } else {
+            console.log(`I am ${user.name} and I'm Normal user`);
+        }
+    }
+
+    checkUser({
+        name: 'jshid',
+        role: 'admin'
+    })
 
 
 
