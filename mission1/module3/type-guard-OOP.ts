@@ -3,8 +3,8 @@
 
     class Animal {
         constructor(
-            name: string,
-            species: string
+            public name: string,
+            public species: string
         ) { }
 
         makeSound() {
@@ -34,11 +34,22 @@
         }
     }
 
+    // this is normal way
+    const getAnimal = (animal: Animal) => {
+        if (animal instanceof Dog) {
+            animal.makeBark()
+        } else if (animal instanceof Cat) {
+            animal.makeMeaw()
+        } else {
+            animal.makeSound()
+        }
+    }
+
+    const cat = new Cat('bilai', 'Cat');
+    const dog = new Dog('kutta', 'Dog');
 
 
-
-
-
+    getAnimal(dog)
 
 
 
