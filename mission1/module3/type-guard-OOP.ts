@@ -45,12 +45,28 @@
         }
     }
 
+    // this is adhunik way
+
+    // const getDog=(animal: Animal) : boolean => animal instanceof Dog "it will return true false value"
+    const getDog = (animal: Animal): animal is Dog => animal instanceof Dog
+    const getCat = (animal: Animal): animal is Cat => animal instanceof Cat
+
+    const anotherGetAnimal = (animal: Animal) => {
+        if (getDog(animal)) {
+            animal.makeBark()
+        } else if (getCat(animal)) {
+            animal.makeMeaw()
+        } else {
+            animal.makeSound()
+        }
+    }
+
     const cat = new Cat('bilai', 'Cat');
     const dog = new Dog('kutta', 'Dog');
 
 
     getAnimal(dog)
-
+    anotherGetAnimal(cat)
 
 
 
